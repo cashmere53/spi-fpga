@@ -1,0 +1,61 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the README at:
+// https://github.com/microsoft/vscode-dev-containers/tree/v0.154.2/containers/ubuntu
+{
+	"name": "Ubuntu",
+	"build": {
+		"dockerfile": "Dockerfile",
+		// Update 'VARIANT' to pick an Ubuntu version: focal, bionic
+		"args": {
+			"VARIANT": "focal"
+		}
+	},
+	// Set *default* container specific settings.json values on container create.
+	"settings": {
+		"terminal.integrated.shell.linux": "/bin/bash",
+		"editor.formatOnSave": true,
+		"python.languageServer": "Pylance",
+		"python.pythonPath": ".venv/bin/python",
+		"python.linting.enabled": true,
+		"python.linting.lintOnSave": true,
+		"python.linting.pylintEnabled": false,
+		"python.linting.flake8Enabled": true,
+		"python.linting.flake8Args": [
+			"--max-line-length", // 1 行あたりの文字数を 120 に設定
+			"120"
+		],
+		"python.linting.mypyEnabled": true,
+		"python.linting.mypyArgs": [
+			"--ignore-missing-imports",
+			"--follow-imports=silent",
+			"--show-column-numbers"
+		],
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length", // 1 行あたりの文字数を 120 に設定
+			"120"
+		],
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true
+			}
+		}
+	},
+	// Add the IDs of extensions you want installed when the container is created.
+	// Add the IDs of extensions you want installed when the container is created.
+	"extensions": [
+		"visualstudioexptteam.vscodeintellicode",
+		"ms-python.vscode-pylance",
+		"ms-python.python",
+		"magicstack.magicpython",
+		"coenraads.bracket-pair-colorizer-2",
+		"mhutchie.git-graph",
+		"eamodio.gitlens",
+		"shardulm94.trailing-spaces",
+	],
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	// "forwardPorts": [],
+	// Use 'postCreateCommand' to run commands after the container is created.
+	"postCreateCommand": "poetry install",
+	// Comment out connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
+	"remoteUser": "vscode"
+}

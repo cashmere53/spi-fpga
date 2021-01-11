@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "fpga"
+version = "0.1.0"
+description = ""
+authors = ["cashmere53 <15913755+cashmere53@users.noreply.github.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+veriloggen = "^1.9.0"
+
+[tool.poetry.dev-dependencies]
+black = "^20.8b1"
+flake8 = "^3.8.4"
+mypy = "^0.790"
+isort = "^5.7.0"
+pytest = "^6.2.1"
+pytest-pythonpath = "^0.7.3"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
