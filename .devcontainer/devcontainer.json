@@ -51,6 +51,8 @@
 		"mhutchie.git-graph",
 		"eamodio.gitlens",
 		"shardulm94.trailing-spaces",
+		"mshr-h.veriloghdl",
+		"wavetrace.wavetrace",
 	],
 	// Use 'forwardPorts' to make a list of ports inside the container available locally.
 	// "forwardPorts": [],
